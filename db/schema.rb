@@ -23,9 +23,4 @@ ActiveRecord::Schema.define(version: 2020_05_29_230959) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tests", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 end

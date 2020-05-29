@@ -6,21 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def get_deals
-  response = RestClient.get "https://api.pipelinedeals.com/api/v3/deals.json?api_key=#{key}"
+response = RestClient.get "https://api.pipelinedeals.com/api/v3/deals.json?api_key=#{ENV["API_KEY"]}"
 
-    json = JSON.parse response
+json = JSON.parse response
 
-    if !json.nil?
-      json['entries'].map do |deal|
-        Deal.create(
-          name: deal['name'],
-          value: deal['value'],
-          stage: deal['deal_stage']['percent']
-        )
-      end
+if !json.nil?
+  json['entries'].map do |deal|
+    Deal.create(
+      name: deal['name'],
+      value: deal['value'],
+      stage: deal['deal_stage']['percent']
+    )
+  end
 
-    else
-      puts "Error seeding deals!"
-    end
+else
+  puts "Error seeding deals!"
 end
