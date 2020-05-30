@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
   def index
-    render json: 'HOMEPAGE controller'
+    render :index
   end
 end
