@@ -1,5 +1,10 @@
 class Api::V1::DealsController < ApplicationController
   def index
-    render json: 'Deals controller'
+    deals = Deal.order(stage: :asc)
+    if deals
+      render json: deals
+    else
+      render json: 'Error getting the deals', status: 401
+    end
   end
 end
