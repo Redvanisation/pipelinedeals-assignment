@@ -11,7 +11,7 @@ const ColumnsChart = ({ isLoading, chartData }) => {
 
   return (
     <div>
-      <h2 className="title">Chart Component</h2>
+      <h2 className="title">Column chart displaying deal values and stages</h2>
       {
         !isLoading
           ? (

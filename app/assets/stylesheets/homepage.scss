@@ -1,3 +1,20 @@
 // Place all the styles related to the homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+.title {
+  font-family: 'PT Sans';
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
