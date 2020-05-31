@@ -11,16 +11,17 @@ const ColumnsChart = ({ isLoading, chartData }) => {
 
   return (
     <div>
-      <h2 className="title">Column chart displaying deal values and stages</h2>
+      <h2 className="main-title">Column chart displaying total $ deal value in each stage</h2>
       {
         !isLoading
           ? (
             <Bar
-             data={chartData}
-             options={{}}
+              className="bar"
+              data={chartData}
+              options={{}}
            />
           )
-          : <h2 className="title">Content is loading!</h2>
+          : <h2 className="loading">Content is loading!</h2>
       }
       
     </div>

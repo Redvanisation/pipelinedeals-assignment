@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DealSerializer < ActiveModel::Serializer
   attributes :id, :name, :value, :stage, :updated_at
 
