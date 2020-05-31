@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-
 class Api::V1::DealsController < ApplicationController
+  # Fetch the deals from the database, order them by stage and send them as JSON or send an error
   def index
     deals = Deal.order(stage: :asc)
 

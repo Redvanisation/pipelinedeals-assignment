@@ -4,10 +4,11 @@ import ColumnsChart from '../components/ColumnsChart';
 
 const App = () => {
 
+  // Setting the loading and the display data states
   const [isLoading, setIsLoading] = useState(true);
   const [chartData, setChartData] = useState([]);
 
-
+  // Function to return random RGBA colors for the columns
   const setColors = (arr) => {
     let i = 0;
     const colors = [];
@@ -21,6 +22,8 @@ const App = () => {
     return colors;
   }
 
+  // Function to get the API data, format it, update the chartData state with it 
+  // and set the isLoading state to false after that
   const getChart = () => {
     axios.get('/api/v1/deals')
     .then(res => {
@@ -54,10 +57,12 @@ const App = () => {
       .catch(() => console.log('Error getting the data!'));
   };
 
+  // Using the useEffect hook to call the above function when the component mounts
   useEffect(() => {
     getChart();
   }, [])
 
+  // Passing the two states as props to the columns chart component
   return (
     <ColumnsChart isLoading={isLoading} chartData={chartData} />
   );
